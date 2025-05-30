@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>หน้าหลัก - Roblox Map Creator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="home.css"/>
+</head>
+<body>
+  <audio id="clickSound" src="mouse-click-331781.mp3" preload="auto"></audio>
+
+  <header class="header">
+    <h1>หน้าหลัก Roblox Map Creator</h1>
+    <div class="signin">
+      <div id="profileInfo">
+        <h2 id="userName"></h2>
+        <button onclick="logout()">ออกจากระบบ</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <a href="map-basics.html" class="card-link" onclick="playClickSound()">
+      <section class="card">
+        <h2>การสร้างแมพเบื้องต้น</h2>
+        <p>เรียนรู้พื้นฐานการวางโครงสร้างใน Roblox Studio อย่างง่าย</p>
+      </section>
+    </a>
+
+    <a href="tool-guide.html" class="card-link" onclick="playClickSound()">
+      <section class="card">
+        <h2>การใช้เครื่องมือเบื้องต้น</h2>
+        <p>รู้จักเครื่องมือต่าง ๆ ที่สำคัญในการสร้างเกม</p>
+      </section>
+    </a>
+
+    <a href="lua-code.html" class="card-link" onclick="playClickSound()">
+      <section class="card">
+        <h2>โค้ด Lua</h2>
+        <p>ตัวอย่างและพื้นฐานของภาษา Lua สำหรับ Roblox</p>
+      </section>
+    </a>
+     <a href="setting.html" class="card" onclick="playClickSound()">
+      <h2>ข้อมูลส่วนตัว</h2>
+    </a>
+  <script src="home.js"></script>
+  <!-- Navigation Bar -->
+<nav class="navbar">
+  <ul>
+    <li><a href="home.html">หน้าหลัก</a></li>
+    <li><a href="map-basics.html">สร้างแมพ</a></li>
+    <li><a href="tool-guide.html">เครื่องมือ</a></li>
+    <li><a href="lua-code.html">โค้ด Lua</a></li>
+    <li><a href="setting.html">ข้อมูลส่วนตัว</a></li>
+    <li><a href="index.html">ลงทะเบียน</a></li>
+    <li><a href="login.html">เข้าสู่ระบบ</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
+  

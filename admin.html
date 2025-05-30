@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>📋 รายชื่อผู้สมัคร (Admin)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #0056b3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #0056b3;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📋 รายชื่อผู้สมัคร</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ชื่อผู้ใช้</th>
+        <th>อีเมล</th>
+        <th>วันที่ลงทะเบียน</th>
+      </tr>
+    </thead>
+    <tbody id="userTableBody">
+    </tbody>
+  </table>
+
+  <script>
+    const userList = JSON.parse(localStorage.getItem("userList")) || [];
+    const tableBody = document.getElementById("userTableBody");
+
+    if (userList.length === 0) {
+      const row = document.createElement("tr");
+      row.innerHTML = `<td colspan="3">ยังไม่มีผู้สมัคร</td>`;
+      tableBody.appendChild(row);
+    } else {
+      userList.forEach(username => {
+        const userData = JSON.parse(localStorage.getItem(username));
+        if (userData) {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${userData.username}</td>
+            <td>${userData.email}</td>
+            <td>${new Date(userData.registeredAt).toLocaleString("th-TH")}</td>
+          `;
+          tableBody.appendChild(row);
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
